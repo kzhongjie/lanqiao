@@ -59,7 +59,7 @@ class MainCanvas extends Canvas
 		}
 		else if (action==LEFT)//Ïò×ó
 		{
-			CurrentImg=LeftImg;
+			Currentimg=LeftImg;
 			x=x-3;
 		}
 		else if (action==RIGHT)//ÏòÓÒ

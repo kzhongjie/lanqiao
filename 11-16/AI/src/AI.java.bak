@@ -20,18 +20,15 @@ public class AI extends MIDlet
 }
 class MainCanvas extends Canvas
 {	
-	int x,y;
-	Image Currentimg,LeftImg,RightImg,UpImg,DownImg;
+	Image Currentimg,img1,img2,img3,img4;
 	public MainCanvas(){
 		try
 		{
-			DownImg=Image.createImage("/sayo10.png");
-			UpImg=Image.createImage("/sayo14.png");
-			LeftImg=Image.createImage("/sayo12.png");
-			RightImg=Image.createImage("/sayo16.png");
-			Currentimg = DownImg;
-			x=120;
-			y=175;
+			img1=Image.createImage("/sayo10.png");
+			img2=Image.createImage("/sayo14.png");
+			img3=Image.createImage("/sayo12.png");
+			img4=Image.createImage("/sayo16.png");
+			Currentimg = img1;
 		}
 		catch (IOException e)
 		{
@@ -39,34 +36,34 @@ class MainCanvas extends Canvas
 		}
 	}
 	public void paint(Graphics g){
-		g.setColor(0,175,125);
+		g.setColor(255,255,0);
 		g.fillRect(0,0,getWidth(),getHeight());
-		g.drawImage(Currentimg,x,y,0);
+		g.drawImage(Currentimg,120,120,0);
 	}
 	public void keyPressed(int keyCode){
 		
 		int action=getGameAction(keyCode);
 
-		if (action==UP)//向上
+		if (action==UP)
 		{
-			Currentimg=UpImg;
-			y=y-3;
+			System.out.println("ooooooooo");
+			Currentimg=img2;
+			repaint();
 		}
-		else if (action==DOWN)//向下
+		else if (action==DOWN)
 		{
-			Currentimg=DownImg;
-			y=y+3;
+			Currentimg=img1;
+			repaint();
 		}
-		else if (action==LEFT)//向左
+		else if (action==LEFT)
 		{
-			CurrentImg=LeftImg;
-			x=x-3;
+			Currentimg=img3;
+			repaint();
 		}
-		else if (action==RIGHT)//向右
+		else if (action==RIGHT)
 		{
-			Currentimg=RightImg;
-			x=x+3;
+			Currentimg=img4;
+			repaint();
 		}
-		repaint();
 	}
 }
